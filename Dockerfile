@@ -22,7 +22,7 @@ RUN mkdir -p /opt/atlassian
 RUN mkdir -p ${JIRA_HOME}
 
 RUN wget -P /tmp ${DOWNLOAD_URL}
-RUN tar zxf /tmp/atlassian-jira-7.3.6.tar.gz -C /tmp
+RUN tar zxf /tmp/atlassian-jira-core-7.3.6.tar.gz -C /tmp
 RUN mv /tmp/atlassian-jira-software-7.3.6-x64.bin /tmp/jira
 RUN mv /tmp/jira /opt/atlassian/
 
