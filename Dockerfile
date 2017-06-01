@@ -23,7 +23,7 @@ RUN set -x \
     && mkdir -p                "${JIRA_HOME}/caches/indexes" \
     && chmod -R 700            "${JIRA_HOME}" \
     && mkdir -p                "${JIRA_INSTALL_DIR}/conf/Catalina" \
-    && curl -Ls                "https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-core-${JIRA_VERSION}.tar.gz" | tar -xz --directory "${JIRA_INSTALL_DIR}" --strip-components=1 --no-same-owner \
+    && curl -Ls                "https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-core-7.3.6.tar.gz" | tar -xz --directory "${JIRA_INSTALL_DIR}" --strip-components=1 --no-same-owner \
     && curl -Ls                "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-5.1.34.tar.gz" | tar -xz --directory "${JIRA_INSTALL_DIR}/lib" --strip-components=1 --no-same-owner "mysql-connector-java-5.1.34/mysql-connector-java-5.1.34-bin.jar" \
     && sed --in-place          "s/java version/openjdk version/g" "${JIRA_INSTALL_DIR}/bin/check-java.sh" \
     && echo -e                 "\njira.home=$JIRA_HOME" >> "${JIRA_INSTALL_DIR}/atlassian-jira/WEB-INF/classes/jira-application.properties" \
