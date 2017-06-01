@@ -10,7 +10,6 @@ ENV DEBIAN_FRONTEND noninteractive
 ENV DOWNLOAD_URL https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-7.3.6.tar.gz
 
 ENV JIRA_HOME /var/atlassian/application-data/jira
-
 ENV JIRA_INSTALL_DIR /opt/atlassian/jira
 
 RUN apt-get update
