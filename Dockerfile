@@ -1,4 +1,4 @@
-FROM phusion/baseimage:0.9.12
+FROM openjdk:8
 MAINTAINER Swapnali Pingale <yeole.swapnali@gmail.com>
 
 ENV HOME /root
@@ -13,7 +13,7 @@ ENV JIRA_HOME /var/atlassian/application-data/jira
 ENV JIRA_INSTALL_DIR /opt/atlassian/jira
 
 RUN apt-get update
-RUN apt-get install -y wget git default-jre
+#RUN apt-get install -y wget git default-jre
 
 RUN sudo /bin/sh -c 'echo JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/jre/bin/java::") >> /etc/environment'
 RUN sudo /bin/sh -c 'echo JIRA_HOME=${JIRA_HOME} >> /etc/environment'
