@@ -1,4 +1,5 @@
 FROM openjdk:8
+FROM phusion/baseimage:0.9.12
 MAINTAINER Swapnali Pingale <yeole.swapnali@gmail.com>
 
 ENV HOME /root
