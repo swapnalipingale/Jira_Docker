@@ -7,7 +7,7 @@ RUN /etc/my_init.d/00_regen_ssh_host_keys.sh
 
 ENV DEBIAN_FRONTEND noninteractive
 
-ENV DOWNLOAD_URL https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-7.3.6.tar.gz
+ENV DOWNLOAD_URL https://www.atlassian.com/software/jira/downloads/binary/atlassian-jira-core-7.3.6.tar.gz
 
 ENV JIRA_HOME /var/atlassian/application-data/jira
 ENV JIRA_INSTALL_DIR /opt/atlassian/jira
