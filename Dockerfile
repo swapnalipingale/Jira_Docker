@@ -16,7 +16,7 @@ ENV JIRA_INSTALL_DIR /opt/atlassian/jira
 RUN apt-get update
 #RUN apt-get install -y wget git default-jre
 
-RUN sudo /bin/sh -c 'echo JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/jre/bin/java::") >> /etc/environment'
+#RUN sudo /bin/sh -c 'echo JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/jre/bin/java::") >> /etc/environment'
 RUN sudo /bin/sh -c 'echo JIRA_HOME=${JIRA_HOME} >> /etc/environment'
 
 RUN set -x \
