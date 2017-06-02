@@ -19,6 +19,7 @@ ENV JIRA_INSTALL_DIR /opt/atlassian/jira
 
 RUN set -x \
     && apt-get update --quiet \
+    && apt-get install -y wget git default-jre
     && mkdir -p                "${JIRA_HOME}" \
     && mkdir -p                "${JIRA_HOME}/caches/indexes" \
     && chmod -R 700            "${JIRA_HOME}" \
@@ -36,7 +37,7 @@ EXPOSE 8080
 VOLUME ["/var/atlassian/application-data/jira", "/opt/atlassian/jira/logs"]
 WORKDIR /var/atlassian/application-data/jira
 
-CMD ["/opt/atlassian/jira/bin/catalina.sh", "run"]
+CMD ["/opt/atlassian/jira/bin/start-jira.sh", "run"]
 
 CMD ["/sbin/my_init"]
 
