@@ -38,7 +38,6 @@ VOLUME ["/var/atlassian/application-data/jira", "/opt/atlassian/jira/logs"]
 WORKDIR /var/atlassian/application-data/jira
 
 CMD ["/opt/atlassian/jira/bin/start-jira.sh", "run"]
-
 CMD ["/sbin/my_init"]
 
 ENV MYSQL_USER root 
