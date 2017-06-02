@@ -13,13 +13,16 @@ ENV DOWNLOAD_URL https://www.atlassian.com/software/jira/downloads/binary/atlass
 ENV JIRA_HOME /var/atlassian/application-data/jira
 ENV JIRA_INSTALL_DIR /opt/atlassian/jira
 
+RUN apt-get update
+RUN apt-get install -y wget git default-jre
+
+RUN sudo /bin/sh -c 'echo JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/jre/bin/java::") >> /etc/environment'
+
 #RUN apt-get install -y wget git default-jre
 #RUN sudo /bin/sh -c 'echo JAVA_HOME=$(readlink -f /usr/bin/java | sed "s:/jre/bin/java::") >> /etc/environment'
 #RUN sudo /bin/sh -c 'echo JIRA_HOME=${JIRA_HOME} >> /etc/environment'
 
 RUN set -x \
-    && apt-get update --quiet \
-    && apt-get install -y wget git default-jre
     && mkdir -p                "${JIRA_HOME}" \
     && mkdir -p                "${JIRA_HOME}/caches/indexes" \
     && chmod -R 700            "${JIRA_HOME}" \
